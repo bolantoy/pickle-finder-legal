@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,15 +43,11 @@
 <body>
 <main>
   <h1>Pickle Finder – Privacy Policy</h1>
-  <p class="meta">
-    Effective date: October 31, 2026<br>
-    Last updated: October 31, 2026<br>
-    Operator: Russel Dimalig (public developer name: RRD)
-  </p>
 
   <h2>1. Introduction</h2>
   <p>This Privacy Policy explains how Pickle Finder collects, stores, uses, and protects information when you use the application.</p>
-  <p>Pickle Finder helps users discover pickleball venues, check venue information and availability, plan playing sessions, and organize games through Paddle Q.</p>
+  <p>Pickle Finder helps users discover pickleball venues, view venue information and availability, save favorites, plan playing sessions, and organize games through Paddle Q.</p>
+  <p>The current release provides local Paddle Q sessions. Online Share Session and Join Session features are currently unavailable in the app. This change to the app interface does not necessarily delete information associated with online sessions created in earlier versions or mean that the backend systems used for other app services have stopped operating.</p>
   <p>The application is operated by Russel Dimalig, using the public developer name RRD. By using Pickle Finder, you acknowledge the practices described in this Privacy Policy.</p>
 
   <h2>2. Information Stored on Your Device</h2>
@@ -64,12 +59,12 @@
     <li>Remembered Paddle Q session information, such as display name, venue or session name, date, and participant role.</li>
     <li>Local-only Paddle Q sessions, including player names and game information.</li>
   </ul>
-  <p>This information is stored using the application's local storage facilities. Local-only Paddle Q sessions are controlled by you on your device and are not automatically uploaded to the online Paddle Q service.</p>
-  <p>On supported iOS and Android devices, Paddle Q organizer capabilities and player credentials saved by the app are stored separately using Expo SecureStore. Remembered-session metadata is stored separately using AsyncStorage and excludes those credentials. Secure credential storage is unavailable in the web version.</p>
+  <p>This information is stored using the application's local storage facilities. Local-only Paddle Q sessions are stored on your device and are not automatically uploaded to the online Paddle Q service.</p>
+  <p>On supported iOS and Android devices, Paddle Q organizer capabilities and player credentials saved by the app are stored separately using Expo SecureStore. Remembered-session metadata is stored separately using AsyncStorage and excludes those credentials. Secure credential storage is unavailable in the web version. The availability of these storage mechanisms does not mean that online Share Session or Join Session features are available in the current app release.</p>
 
-  <h2>3. Information Processed Through Online Paddle Q</h2>
-  <p>If you use online Paddle Q features, information may be transmitted to and stored by the application's backend service.</p>
-  <p>Depending on how you use the feature, this information may include:</p>
+  <h2>3. Information Previously Processed Through Online Paddle Q</h2>
+  <p>Online Share Session and Join Session features are not available in the current release. However, users may have created or joined online Paddle Q sessions in earlier versions. Information associated with those sessions may continue to be stored or processed by the application's backend until it is deleted under applicable retention processes or following a valid deletion request.</p>
+  <p>Depending on how earlier online Paddle Q features were used, information may include:</p>
   <ul>
     <li>Session and venue information.</li>
     <li>Session dates and times.</li>
@@ -80,16 +75,17 @@
     <li>Game scores and results.</li>
     <li>Credential hashes used to support organizer and player access.</li>
   </ul>
-  <p>Online Paddle Q information is used to create, manage, and display sessions, coordinate participants, and record game results.</p>
+  <p>Such information was used to create, manage, and display sessions, coordinate participants, and record game results.</p>
   <p>Do not use sensitive personal information as a player display name or include it in session or game information.</p>
 
   <h2>4. Device Location</h2>
   <p>The current mobile app code does not request or read your device's current location. Its map view displays venue coordinates, and it does not enable a user-location marker.</p>
   <p>If you choose to open directions, the app passes the venue coordinates to an external mapping app or Google Maps. That provider operates under its own privacy policy and terms.</p>
-<h2>5. Internet Services and Third Parties</h2>
+
+  <h2>5. Internet Services and Third Parties</h2>
   <p>The current release integrates with external services to operate the app:</p>
   <ul>
-    <li><strong>Render:</strong> Hosts the Pickle Finder backend that the app contacts for venue information, availability, and online Paddle Q.</li>
+    <li><strong>Render:</strong> Hosts the Pickle Finder backend that the app contacts for venue information and availability, and that has also supported online Paddle Q features.</li>
     <li><strong>Supabase:</strong> Provides database services used by the backend for venue data and online Paddle Q. The backend also contacts Supabase-hosted systems used by some venue availability sources.</li>
     <li><strong>Expo:</strong> Expo Updates is configured to deliver app updates.</li>
     <li><strong>Mapping providers:</strong> The app embeds venue maps using react-native-maps (Google Maps on Android and the platform map provider on iOS). It can also open venue coordinates in an external mapping or directions app when you choose that feature.</li>
@@ -97,26 +93,30 @@
   </ul>
   <p>Information sent depends on the feature. Requests for online app features go to the Render-hosted backend, which uses Supabase for database services and may request availability from the relevant venue or booking provider. Embedded maps and opening directions may send map requests or venue coordinates to the applicable mapping provider. Opening venue websites or booking links sends the requested URL to the external provider.</p>
   <p>These providers have their own privacy policies, security practices, and terms. We do not control their independent privacy practices.</p>
-<h2>6. Analytics and Advertising</h2>
-  <p>The current release source and dependency manifests do not show a dedicated analytics or advertising SDK integration or app code that sends analytics or advertising events.</p>
-  <p>This does not mean that infrastructure, app update, or mapping providers collect no operational or usage information. Those providers may process technical information under their own policies.</p>
-<h2>7. Data Retention</h2>
-  <p>Information stored locally on your device remains under your control. Local-only Paddle Q sessions are not uploaded to the online Paddle Q service and are not subject to the server-side retention process described below.</p>
-  <p>For online Paddle Q sessions, completed and cancelled sessions are automatically deleted once 30 days have passed since the database-recorded terminal timestamp. For sessions that were already completed or cancelled when this retention process was introduced, the timestamp was backfilled from the database's updated_at value, which may not be the exact time the session first became completed or cancelled. Later terminal status changes are timestamped by the database. The cleanup applies only to completed and cancelled statuses; active and scheduled sessions are excluded, and other statuses are not eligible for automatic deletion.</p>
-  <p>When an eligible online session is deleted, its associated player and game records are also deleted.</p>
-  <p>You may request manual deletion of online Paddle Q information at any time by contacting us using the email address below. We will review and process requests subject to applicable requirements and technical limitations.</p>
-<h2>8. Data Security</h2>
+
+  <h2>6. Analytics and Advertising</h2>
+  <p>The current release source and dependency manifests reviewed for this policy do not show a dedicated analytics or advertising SDK integration or app code that sends analytics or advertising events.</p>
+  <p>This does not mean that infrastructure, app update, mapping, or venue providers collect no operational or usage information. Those providers may process technical information under their own policies.</p>
+
+  <h2>7. Data Retention</h2>
+  <p>Information stored locally on your device remains under your control. You can manage or remove local information through the app's available features or by clearing the app's data or uninstalling it, subject to the behavior of your device and operating system. Removing the app may not remove information that you previously submitted to an online service.</p>
+  <p>Local-only Paddle Q sessions are stored on your device and are not uploaded to the online Paddle Q service. They are not subject to server-side retention processes for online sessions.</p>
+  <p>Information associated with online Paddle Q sessions created in earlier versions may remain in backend storage. Such information is retained and deleted according to applicable operational retention processes and valid deletion requests. We do not promise a fixed deletion period in this policy. The time required to process a deletion request may depend on the information involved, applicable requirements, and technical limitations.</p>
+  <p>You may request manual deletion of online Paddle Q information by contacting us using the email address below. We will review and process requests subject to applicable requirements and technical limitations.</p>
+
+  <h2>8. Data Security</h2>
   <p>On supported iOS and Android devices, the app stores Paddle Q organizer capabilities and player credentials using Expo SecureStore. In the backend, organizer and player credentials for online Paddle Q are stored in the database as salted scrypt-derived hashes rather than readable credential values. These statements apply to Paddle Q credentials; they do not describe every type of information handled by the app.</p>
   <p>However, no application, storage system, or internet transmission can be guaranteed to be completely secure.</p>
   <p>You should keep your device secure and avoid sharing organizer or player credentials with other people.</p>
-<h2>9. Children's Privacy and Intended Audience</h2>
+
+  <h2>9. Children's Privacy and Intended Audience</h2>
   <p>Pickle Finder is intended for a general audience, including adults and older teenagers.</p>
   <p>The application is not specifically designed to collect personal information from young children. Users should not submit sensitive personal information through display names, session details, or other application features.</p>
   <p>If you believe a child has submitted personal information through the application, please contact us so we can review the matter.</p>
 
   <h2>10. Your Choices and Data Requests</h2>
-  <p>You can choose whether to use online Paddle Q features. You can also choose whether to save local favorites, schedules, and local-only sessions.</p>
-  <p>For requests involving online Paddle Q information, including deletion requests, contact:</p>
+  <p>The current version of Pickle Finder provides local-only Paddle Q sessions. Online Share Session and Join Session features are currently unavailable. You can choose whether to save local favorites, schedules, and local-only sessions.</p>
+  <p>Information associated with online sessions created in earlier versions may remain subject to the retention and deletion practices described in this policy. For requests involving such information, including deletion requests, contact:</p>
   <p><strong>Email:</strong> <a href="mailto:picklefinder2026@gmail.com">picklefinder2026@gmail.com</a></p>
   <p>Please provide enough information for us to identify the relevant session or record. Do not send passwords, organizer secrets, or other credentials in your request.</p>
 
@@ -133,6 +133,11 @@
   <p><strong>Russel Dimalig (RRD)</strong><br>
   <strong>Email:</strong> <a href="mailto:picklefinder2026@gmail.com">picklefinder2026@gmail.com</a></p>
 
+  <p class="meta">
+    <strong>Effective date:</strong> November 7, 2026<br>
+    <strong>Last updated:</strong> November 7, 2026<br>
+    <strong>Operator:</strong> Russel Dimalig (public developer name: RRD)
+  </p>
   <footer>© 2026 Pickle Finder. All rights reserved.</footer>
 </main>
 </body>
